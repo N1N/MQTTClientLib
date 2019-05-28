@@ -24,7 +24,7 @@ Summary :
   Returns with NX_STATUS value.
   Every information will be stored in mqtt_broker_handle_t structure pointer passed as parameter.
 
-2)	NX_STATUS mqtt_connect_start(mqtt_broker_handle_t *broker);
+2)NX_STATUS mqtt_connect_start(mqtt_broker_handle_t *broker);
 Syntax:
 	NX_STATUS mqtt_connect_start(mqtt_broker_handle_t *);
 Parameters:
@@ -39,7 +39,7 @@ Summary :
   Returns NX_STATUS value.
   If connected properly, then ACK will be recieved from the server.
 
-3)	int mqtt_publish(mqtt_broker_handle_t* broker, const char* topic, const char* msg, uint8_t retain);
+3)int mqtt_publish(mqtt_broker_handle_t* broker, const char* topic, const char* msg, uint8_t retain);
 Syntax:
   int mqtt_publish(mqtt_broker_handle_t* , const char* , const char* , uint8_t);
 Parameters:
@@ -55,7 +55,7 @@ Summary :
   Sends publish request with provided topic and message information.
   Returns NX_STATUS value.
 
-4)	int mqtt_publish_with_qos(mqtt_broker_handle_t* broker, const char* topic, const char* msg, uint8_t retain, uint8_t qos, uint16_t* message_id);
+4)int mqtt_publish_with_qos(mqtt_broker_handle_t* broker, const char* topic, const char* msg, uint8_t retain, uint8_t qos, uint16_t* message_id);
 Syntax:
   int mqtt_publish_with_qos(mqtt_broker_handle_t* broker, const char* , const char* , uint8_t , uint8_t , uint16_t*);
 Parameters:
@@ -75,7 +75,7 @@ Summary :
   Returns NX_STATUS value.
   Acknowledge will be sent from the server based on the QOS level selected.
 
-4.3.5	int mqtt_subscribe(mqtt_broker_handle_t* broker, const char* topic, uint16_t* message_id);
+5)int mqtt_subscribe(mqtt_broker_handle_t* broker, const char* topic, uint16_t* message_id);
 Syntax:
   mqtt_subscribe(mqtt_broker_handle_t* , const char* , uint16_t*);
 Parameters:
@@ -91,7 +91,7 @@ Summary :
   Acknowledge will be sent from the server.
   Note : If any data is sent from the publisher over the subscribed topic, data will be avilable over the TCP socket. It can be     retrieved using TCP read socket API.
 
-6) int mqtt_unsubscribe(mqtt_broker_handle_t* broker, const char* topic, uint16_t* message_id);
+6)int mqtt_unsubscribe(mqtt_broker_handle_t* broker, const char* topic, uint16_t* message_id);
 Syntax:
   int mqtt_unsubscribe(mqtt_broker_handle_t*, const char* , uint16_t*);
 Parameters:
